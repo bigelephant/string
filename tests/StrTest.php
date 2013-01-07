@@ -2,7 +2,7 @@
 use Anahkiasen\Str;
 use Anahkiasen\Pluralizer;
 
-class StrTest extends StartTests
+class StrTest extends PHPUnit_Framework_TestCase
 {
   public function setUp()
   {
