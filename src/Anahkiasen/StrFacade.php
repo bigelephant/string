@@ -1,8 +1,8 @@
-<?php namespace Anahkiasen\Facades;
+<?php namespace Anahkiasen;
 
 use Illuminate\Support\Facades\Facade;
 
-class Str extends Facade
+class StrFacade extends Facade
 {
   /**
    * Get the registered name of the component.

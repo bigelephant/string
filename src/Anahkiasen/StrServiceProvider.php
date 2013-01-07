@@ -1,9 +1,7 @@
 <?php
-namespace Anahkiasen\Providers;
+namespace Anahkiasen;
 
 use Illuminate\Support\ServiceProvider;
-use \Anahkiasen\Str;
-use \Anahkiasen\Pluralizer;
 
 class StrServiceProvider extends ServiceProvider
 {
