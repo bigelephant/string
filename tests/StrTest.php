@@ -1,8 +1,14 @@
 <?php
-include '_start.php';
+use Anahkiasen\Str;
+use Anahkiasen\Pluralizer;
 
 class StrTest extends StartTests
 {
+  public function setUp()
+  {
+    $this->str = new Str(new Pluralizer);
+  }
+
   /**
    * Test the Str::length method.
    *
