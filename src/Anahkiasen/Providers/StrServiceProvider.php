@@ -2,6 +2,8 @@
 namespace Anahkiasen\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use \Anahkiasen\Str;
+use \Anahkiasen\Pluralizer;
 
 class StrServiceProvider extends ServiceProvider
 {
