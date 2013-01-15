@@ -2,8 +2,6 @@
 
 This is a string helper class for things like turning strings into URL friendly slugs.
 
-It is mostly taken from Laravel 3 and also from this port https://github.com/Anahkiasen/string. So credit to Taylor Otwell and Maxime Fabre.
-
 To install add the following to your `composer.json` file :
 
 ```json
@@ -22,3 +20,5 @@ And then so you can use it from the `String` alias (or `Str`, if you choose so t
 ```php
 'String' => 'BigElephant\String\StringFacade'
 ```
+
+[![Build Status](https://secure.travis-ci.org/bigelephant/string.png)](http://travis-ci.org/bigelephant/string)

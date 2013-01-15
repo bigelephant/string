@@ -1,6 +1,6 @@
 {
 	"name": "bigelephant/string",
-	"description": "A port of Laravel 3's String class to Illuminate",
+	"description": "A string helper task with built in classes to easily add to Laravel 4",
 	"authors": [
 	{
 		"name": "Robbo",
