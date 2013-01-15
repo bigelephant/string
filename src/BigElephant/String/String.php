@@ -175,7 +175,7 @@ class String implements StringInterface {
 	 */
 	public function limitExact($string, $limit, $elipses = '...')
 	{
-		if ($this->lenght($string) <= $limit)
+		if ($this->length($string) <= $limit)
 		{
 			return $string;
 		}
@@ -221,7 +221,7 @@ class String implements StringInterface {
 			return $string;
 		}
 
-		return preg_replace('#[^\s]{' . $length . '}(?=[^\s])#u', '$0  ', $string);
+		return preg_replace('#[^\s]{' . $length . '}(?=[^\s])#u', '$0 ', $string);
 	}
 
 	/**

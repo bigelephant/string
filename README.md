@@ -20,5 +20,5 @@ Edit your `app/config/app.php` file and add the following to the `providers` arr
 And then so you can use it from the `String` alias (or `Str`, if you choose so then replace `String` with `Str` in the following) add the following line to the `aliases` array:
 
 ```php
-'String' => 'BigElephant\String\StringFacade`
+'String' => 'BigElephant\String\StringFacade'
 ```
