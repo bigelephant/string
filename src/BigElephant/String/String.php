@@ -259,14 +259,32 @@ class String implements StringInterface {
 	}
 
 	/**
+	 * Get a files extension from its path.
+	 *
+	 * @param  string $string
+	 * @return string $string
+	 */
+	public function extension($fileName)
+	{
+		return strtolower(substr(strrchr($fileName, '.'), 1));
+	}
+
+	/**
 	 * Generate a URL friendly "slug" from a given string.
 	 *
 	 * @param  string $string
 	 * @param  string $separator
 	 * @return string
 	 */
-	public function slug($string, $separator = '-')
+	public function slug($string, $separator = '-', $keepExtension = false)
 	{
+		$extension = '';
+		if ($keepExtension)
+		{
+			$extension = '.'.$this->extension($string);
+			$string = substr($string, 0, -$this->length($extension));
+		}
+
 		$string = $this->ascii($string);
 
 		// Remove all characters that are not the separator, letters, numbers, or whitespace.
@@ -275,7 +293,7 @@ class String implements StringInterface {
 		// Replace all separator characters and whitespace by a single separator
 		$string = preg_replace('!['.preg_quote($separator).'\s]+!u', $separator, $string);
 
-		return trim($string, $separator);
+		return trim($string, $separator).$extension;
 	}
 
 	/**

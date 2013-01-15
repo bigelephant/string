@@ -78,11 +78,20 @@ class StringTest extends PHPUnit_Framework_TestCase
 		$this->assertEquals('Robbo likes beere speci allyw henit is hot!', $this->string->wordWrap('Robbolikesbeerespeciallywhenitis hot!', 5));
 	}
 
+	public function testStringsExtension()
+	{
+		$this->assertEquals('', $this->string->extension('My nEw post!!!'));
+		$this->assertEquals('jpg', $this->string->extension('An img name To convert.jpg'));
+		$this->assertEquals('blah', $this->string->extension('.An imgname.To-convert.blah'));
+	}
+
 	public function testStringsCanBeSlugged()
 	{
 		$this->assertEquals('my-new-post', $this->string->slug('My nEw post!!!'));
 		$this->assertEquals('my_new_post', $this->string->slug('My nEw post!!!', '_'));
 		$this->assertEquals('my-new-post', $this->string->slug('my-new-post'));
+		$this->assertEquals('an-img-name-to-convertjpg', $this->string->slug('An img name To convert.jpg'));
+		$this->assertEquals('an-img-name-to-convert.jpg', $this->string->slug('An img name To convert.jpg', '-', true));
 	}
 
 	public function testStringsCanBeConvertedToAscii()
