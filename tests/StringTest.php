@@ -37,7 +37,17 @@ class StringTest extends PHPUnit_Framework_TestCase
 	public function testStringCanBeConvertedToUpperWords()
 	{
 		$this->assertEquals('Taylor', $this->string->upperWords('taylor'));
-		$this->assertEquals('Άχιστη', $this->string->upperWords('άχιστη'));
+		$this->assertEquals('Taylor Better Tester', $this->string->upperWords('taylor better tester'));
+		$this->assertEquals('TAYLOR BeTteR TEsTer', $this->string->upperWords('TAYLOR beTteR tEsTer'));
+		//$this->assertEquals('Άχιστη', $this->string->upperWords('άχιστη'));
+	}
+
+	public function testStringCanBeConvertedToTitleCase()
+	{
+		$this->assertEquals('Taylor', $this->string->titleCase('taylor'));
+		$this->assertEquals('Taylor Better Tester', $this->string->titleCase('taylor better tester'));
+		$this->assertEquals('Taylor Better Tester', $this->string->titleCase('TAYLOR beTteR TEsTer'));
+		$this->assertEquals('Άχιστη', $this->string->titleCase('άχιστη'));
 	}
 
 	public function testStringCanBeLimitedByCharacters()
@@ -72,6 +82,7 @@ class StringTest extends PHPUnit_Framework_TestCase
 	{
 		$this->assertEquals('my-new-post', $this->string->slug('My nEw post!!!'));
 		$this->assertEquals('my_new_post', $this->string->slug('My nEw post!!!', '_'));
+		$this->assertEquals('my-new-post', $this->string->slug('my-new-post'));
 	}
 
 	public function testStringsCanBeConvertedToAscii()
@@ -79,7 +90,7 @@ class StringTest extends PHPUnit_Framework_TestCase
 		$this->assertEquals('UzEJaPLae', $this->string->ascii('ŪžĒЯПĻæ'));
 	}
 
-	public function testStringsCanBeCameCased()
+	public function testStringsCanBeCamelCased()
 	{
 		$this->assertEquals('FooBar', $this->string->camelCase('foo_bar'));
 		$this->assertEquals('FooBarBaz', $this->string->camelCase('foo-bar_baz'));

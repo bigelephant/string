@@ -142,6 +142,17 @@ class String implements StringInterface {
 	 */
 	public function upperWords($string)
 	{
+		return ucwords($string);
+	}
+
+	/**
+	 * Convert into title case.
+	 *
+	 * @param  string $string
+	 * @return string
+	 */
+	public function titleCase($string)
+	{
 		return (MB_STRING) ? mb_convert_case($string, MB_CASE_TITLE, $this->encoding) : ucwords($this->lower($string));
 	}
 
