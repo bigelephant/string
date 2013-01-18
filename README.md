@@ -2,7 +2,7 @@
 
 This is a string helper class for things like turning strings into URL friendly slugs.
 
-To install add the following to your `composer.json` file :
+To install add the following to your `composer.json` file:
 
 ```json
 "bigelephant/string": "dev-master"
